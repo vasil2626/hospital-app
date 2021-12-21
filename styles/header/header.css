@@ -1,0 +1,157 @@
+.nav{
+    display: flex;
+    align-items: center;
+    position: static;
+    top: 0px;
+    left: 0px;
+    height: 78px;
+    background: #FFFFFF45 0% 0% no-repeat padding-box;
+    opacity: 1;
+    z-index: 5;
+}
+
+.nav__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__content-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.nav-logo{
+    margin-right: 27px;
+    cursor: pointer;
+}
+
+.nav-items{
+    color: #404043;;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0px;
+}
+
+.nav-items:hover{
+    color: #009AFF;
+} 
+
+.nav-items:not(:last-child){
+    margin-right: 26px;
+}
+
+.nav__items-mobile{
+    width: 100%;
+    position: relative;
+    /* top: 120px; */
+    /* left: 0; */
+    bottom: 0;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+
+}
+
+
+.nav__login-button{
+    width: 137px;
+    height: 45px;
+    border-radius: 14px;
+    background: transparent;
+    border: 1px solid #009AFF;
+    color: #009AFF;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.nav__login-button:hover{
+    background: #009AFF;
+    color: #fff;
+}
+
+.nav__burger-menu{
+    display: none;
+}
+.burger__icon{
+    width: 46px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    align-items: center;
+}
+
+.burger__lines{
+    width: 65%;
+    height: 2px;
+    border-radius: 11px;
+    background-color: #009AFF;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+
+.burger__lines-close:nth-child(1){
+    width: 65%;
+    height: 2px;
+    background-color: #009AFF;
+    transform: rotate(45deg);
+    transition: 0.2s;
+
+}
+
+.burger__lines-close:nth-child(3){
+    width: 65%;
+    height: 2px;
+    background-color: #009AFF;
+    transform: rotate(-45deg);
+    transition: 0.2s;
+}
+
+
+.nav__login-button-mobile{
+    position: relative;
+    top: 255px;
+    bottom: 0;
+    right: 290px;
+}
+
+.burger__content{
+    height: 10px;
+    width: 100px;
+    background-color: #009AFF;
+}
+
+@media screen and (max-width: 826px) {
+    .nav-logo{
+        margin: 0;
+    }
+  .nav-items{
+      display: none;
+  }
+    .nav__burger-menu{
+        display: flex;
+        cursor: pointer;
+    }
+
+    .nav__content-side{
+        flex-direction: column;
+        position: fixed;
+        background: #d3d8d9de 0% 0% no-repeat padding-box;
+        top: 70px;
+        width: 100%;
+        height: 48vh;
+        right: 0;
+        z-index: 0;
+        transition: 0.7s;
+    }
+
+    .nav__login-button{
+        display: none;
+
+    }
+ 
+}

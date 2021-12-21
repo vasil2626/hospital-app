@@ -1,0 +1,38 @@
+.about{
+    margin-bottom: 200px;
+}
+
+.about__content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    
+}
+
+.about__paragraph{
+    width: 38%;
+    background-image: url("../../Assets/about/about-bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 100px;
+}
+
+.about__text{
+    color: #737374;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1090px) {
+    .about__content{
+        /* width: 50%; */
+        justify-content: center;
+
+    }
+    .about__paragraph{
+        background: none;
+        width: 100%;
+    }
+}

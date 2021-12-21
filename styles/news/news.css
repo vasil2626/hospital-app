@@ -1,0 +1,38 @@
+.news{
+    margin-bottom: 200px;
+
+}
+
+.news__head{
+    display: flex;
+}
+
+.news__content{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.news__blocks{
+    width: 20%;
+    text-align: center;
+}
+
+.news__button{
+    width: 100px;
+    color: #898C8E;
+    background: transparent;
+    border-radius: 18px;
+    border: 1px solid #898C8E;
+    box-sizing: content-box;
+    padding: 8px 10px ;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.news__button:hover{
+    width: 110px;
+    font-size: 18px;
+}

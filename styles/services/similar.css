@@ -1,0 +1,46 @@
+.similar__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.similar__content:not(:last-child){
+    margin-bottom: 50px;
+
+}
+
+.similar__content:nth-child(even){
+    flex-direction: row-reverse;
+    text-align: -webkit-right;
+}
+
+
+.similar__description{
+    width: 70%;
+
+}
+.similar__description:nth-child(odd){
+    width: 70%;
+
+    margin-left: auto;
+}
+
+.similar__button{
+    width: 100px;
+    color: #898C8E;
+    background: transparent;
+    border-radius: 18px;
+    border: 1px solid #898C8E;
+    box-sizing: content-box;
+    padding: 8px 10px ;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.similar__button:hover{
+    width: 110px;
+    font-size: 18px;
+}

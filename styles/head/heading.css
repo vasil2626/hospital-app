@@ -1,0 +1,33 @@
+.section__headings{
+    width: 96%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+
+}
+
+.heading__items{
+    font-size: 64px;
+    width: 0%;
+    transition: 0.5s;
+    color: #737374;
+    text-transform: uppercase;
+}
+
+.heading__items:not(:first-child){
+    opacity: 0.1;
+}
+
+.heading__items-open{
+    text-transform: uppercase;
+    color: #737374;
+    transition: 0.5s;
+    font-size: 64px;
+}
+
+.heading__items-open:not(:last-child){
+    width: 5%;
+    /* margin-left: 5px; */
+
+
+}
