@@ -6,6 +6,12 @@
 
 }
 
+.section__heading-left{
+    width: 96%;
+    display: flex;
+    cursor: pointer;
+}
+
 .heading__items{
     font-size: 64px;
     width: 0%;

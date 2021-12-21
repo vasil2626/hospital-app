@@ -10,6 +10,7 @@ const Services = () => {
             <div className="container">
                 <Heading
                     head="services"
+                    right={true}
                 />  
                 <SoSimilar data={data} />
             </div>

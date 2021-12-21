@@ -7,7 +7,7 @@ import address from "../../Assets/contacts/contacts-icon/adress.png"
 
 const Contacts = () => {
     return (
-        <div className="contacts">
+        <section className="contacts">
             <div className="container">
                 <Heading head="contacts" />
                 <div className="contacts__content">
@@ -28,7 +28,7 @@ const Contacts = () => {
                     <div className="contacts__image"></div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

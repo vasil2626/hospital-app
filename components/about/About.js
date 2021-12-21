@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import Heading from "../Heading/Heading";
 import aboutMainImg from "../../Assets/about/about-main.png"
 
@@ -7,20 +6,12 @@ const About = () => {
 
     const pageTitle = "about us"
 
-    const pageRef = useRef()
 
-    const [aboutHeight, setAboutHeight] = useState()
-
-
-    useEffect(() => {
-        setAboutHeight(pageRef)
-
-    })
 
     return (
-        <section className="about section" ref={pageRef}>
+        <section className="about">
             <div className="container">
-                <Heading head="About us" />
+                <Heading head="About us" right={true}/>
                 <div className="about__content">
                     <Image 
                     src={aboutMainImg} 

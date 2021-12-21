@@ -5,7 +5,7 @@ import {data} from "./data"
 const News = () => {
 
     return (
-        <div className="news">
+        <section className="news">
             <div className="container">
                 <Heading head="news" />
                 <div className="news__content">
@@ -29,7 +29,7 @@ const News = () => {
                
              
             </div>
-        </div>
+        </section>
     );
 }
 

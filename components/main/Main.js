@@ -2,8 +2,9 @@ import mainImage from "../../Assets/main/main.png"
 import Image from "next/image"
 
 const Main = () => {
+
   return (
-    <div className="main">
+    <section className="main">
       <div className="container">
         <div className="main__head">
           <div className="main__text">
@@ -24,7 +25,7 @@ const Main = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

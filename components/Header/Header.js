@@ -18,6 +18,10 @@ const Header = () => {
         }
     }
 
+    const handleClick = (e) =>{
+        console.log(e);
+    }
+
     useEffect(() => {
         window.addEventListener("resize", handleResize)
 
@@ -38,10 +42,10 @@ const Header = () => {
                             height={42}
                         />
                     </div>
-                    <ul className={!menuOpen ?"nav__content-list" : "nav__content-side"} >
+                    <ul className={!menuOpen ? "nav__content-list" : "nav__content-side"} >
                         {
                             routs.map((routs, i) => {
-                                return <li className={!menuOpen ? "nav-items" : "nav__items-mobile"} key={i}>{routs}</li>
+                                return <li className={!menuOpen ? "nav-items" : "nav__items-mobile"} key={i} onClick={handleClick}>{routs}</li>
                             })
                         }
                     </ul>
