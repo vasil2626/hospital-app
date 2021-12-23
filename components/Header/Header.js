@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import logo from "../../Assets/navbar/logo.png";
 import Image from 'next/image'
+import { data } from "./data"
+import PopUp from "../popUp/PopUp";
 
 const Header = () => {
-
-    const routs = ["home", "about us", "services", "news", "contacts"]
 
     const lines = Array.of(1, 2, 3)
 
     const [menuOpen, setMenuOpen] = useState(false)
+
+    const [openPopUp, setOpenPopUp] = useState(false)
 
     const handleResize = (e) => {
         console.log(e.srcElement.innerWidth);
@@ -18,8 +20,23 @@ const Header = () => {
         }
     }
 
-    const handleClick = (e) =>{
-        console.log(e);
+    const handleClick = (e) => {
+        e.preventDefault()
+        const target = e.target.getAttribute("href")
+        const location = document.querySelector(target).offsetTop
+        const topPosition = location - 200
+        window.scrollTo({
+            left: 0,
+            top: topPosition
+        })
+    }
+
+    const loginHandler = () => {
+        setOpenPopUp(true)
+    }
+
+    const onClose = () =>{
+        setOpenPopUp(false)
     }
 
     useEffect(() => {
@@ -44,12 +61,24 @@ const Header = () => {
                     </div>
                     <ul className={!menuOpen ? "nav__content-list" : "nav__content-side"} >
                         {
-                            routs.map((routs, i) => {
-                                return <li className={!menuOpen ? "nav-items" : "nav__items-mobile"} key={i} onClick={handleClick}>{routs}</li>
+                            data.map((routs) => {
+                                return <li
+                                    className={!menuOpen ? "nav-items" : "nav__items-mobile"}
+                                    key={routs.id}
+                                >
+                                    <a href={routs.url} onClick={handleClick}>{routs.section}</a>
+                                </li>
                             })
                         }
                     </ul>
-                    <button className={"nav__login-button"} >login</button>
+                    <div className="nav__auth">
+                        <ul className="nav__auth-list">
+                            <li className="nav__auth-items">login</li>
+                            <li className="nav__auth-items"></li>
+                            <li className="nav__auth-items" onClick={loginHandler}>clinics</li>
+                            <li className="nav__auth-items">requestor</li>
+                        </ul>
+                    </div>
                     <div className="nav__burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
                         <div className="burger__icon">
                             {
@@ -62,8 +91,14 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+           
             </div>
-
+            {
+                openPopUp && 
+                <PopUp 
+                close={onClose}
+                />
+            }
         </nav>
     );
 }

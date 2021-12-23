@@ -6,7 +6,7 @@ import { data } from "./data"
 const Services = () => {
 
     return (
-        <section className="services section" >
+        <section className="services" id="services" >
             <div className="container">
                 <Heading
                     head="services"

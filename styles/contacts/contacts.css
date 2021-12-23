@@ -23,6 +23,16 @@
     border: none;
 }
 
+.contacts__input::placeholder{
+   padding-left: 10px;
+}
+
+
+.contacts__message-area::placeholder{
+    padding: 10px 10px;
+
+}
+
 .contacts__message-area{
     border-radius: 8px;
     height: 100px;

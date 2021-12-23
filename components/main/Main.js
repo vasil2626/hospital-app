@@ -4,7 +4,7 @@ import Image from "next/image"
 const Main = () => {
 
   return (
-    <section className="main">
+    <section className="main" id="home">
       <div className="container">
         <div className="main__head">
           <div className="main__text">

@@ -4,12 +4,8 @@ import aboutMainImg from "../../Assets/about/about-main.png"
 
 const About = () => {
 
-    const pageTitle = "about us"
-
-
-
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className="container">
                 <Heading head="About us" right={true}/>
                 <div className="about__content">

@@ -7,7 +7,7 @@ import address from "../../Assets/contacts/contacts-icon/adress.png"
 
 const Contacts = () => {
     return (
-        <section className="contacts">
+        <section className="contacts" id="contacts">
             <div className="container">
                 <Heading head="contacts" />
                 <div className="contacts__content">

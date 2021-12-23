@@ -1,7 +1,7 @@
 .nav{
     display: flex;
     align-items: center;
-    position: static;
+    position: sticky;
     top: 0px;
     left: 0px;
     height: 78px;
@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
 }
+
 
 
 
@@ -47,8 +48,6 @@
 .nav__items-mobile{
     width: 100%;
     position: relative;
-    /* top: 120px; */
-    /* left: 0; */
     bottom: 0;
     text-align: center;
     font-size: 24px;
@@ -57,21 +56,67 @@
 
 }
 
-
-.nav__login-button{
+.nav__auth{
+    position: relative;
+    bottom: 0;
+    text-align: center;
     width: 137px;
-    height: 45px;
-    border-radius: 14px;
+    height: 40px;
+    border-radius: 14px 14px 0 0;
     background: transparent;
-    border: 1px solid #009AFF;
-    color: #009AFF;
+    border-top: 1px solid #404043;
+    color: #404043;
     text-transform: uppercase;
     cursor: pointer;
+    padding: 5px;
 }
 
-.nav__login-button:hover{
-    background: #009AFF;
-    color: #fff;
+.nav__auth:hover .nav__auth-list{
+    height: 90px;
+}
+
+.nav__auth-list{
+    position: absolute;
+    top: -5px;
+    left: inherit;
+    right: 0;
+    width: stretch;
+    height: 26px;
+    border-bottom: 1px solid #404043;
+    border-left: 1px solid #404043;
+    border-right: 1px solid #404043;
+    border-radius: 0 0 14px 14px;
+    margin: 15px 0;
+}
+
+.nav__auth-list .nav__auth-items:not(:first-child){
+    display: none;
+}
+
+.nav__auth-list .nav__auth-items:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.nav__auth:hover .nav__auth-list .nav__auth-items{
+    display: block;
+}
+
+.nav__auth-items{
+    width: 50%;
+    text-align: center;
+    margin: 0 10px;
+   font-size: 14px;
+}
+
+.nav__auth-items:nth-child(2){
+    width: 75%;
+
+    margin: 0 auto;
+    border: 0.5px solid #404043;
+}
+
+.nav__auth-items:nth-child(1){
+    margin: 0 auto;
 }
 
 .nav__burger-menu{
@@ -149,7 +194,7 @@
         transition: 0.7s;
     }
 
-    .nav__login-button{
+    .nav__auth{
         display: none;
 
     }

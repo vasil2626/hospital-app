@@ -9,6 +9,8 @@ import "../styles/services/services.css"
 import "../styles/services/similar.css"
 import "../styles/news/news.css"
 import "../styles/contacts/contacts.css"
+import "../styles/popUp/popUp.css"
+import "../styles/button/button.css"
 
 import Layout from '../components/Layout'
 

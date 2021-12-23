@@ -5,7 +5,7 @@ import {data} from "./data"
 const News = () => {
 
     return (
-        <section className="news">
+        <section className="news" id="news" >
             <div className="container">
                 <Heading head="news" />
                 <div className="news__content">
