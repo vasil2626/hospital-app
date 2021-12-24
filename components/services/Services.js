@@ -1,5 +1,5 @@
 import Heading from "../Heading/Heading"
-import SoSimilar from "./ Similar/ Similar"
+import Similar from "./ Similar/ Similar"
 import { data } from "./data"
 
 
@@ -12,7 +12,7 @@ const Services = () => {
                     head="services"
                     right={true}
                 />  
-                <SoSimilar data={data} />
+                <Similar data={data} />
             </div>
         </section>
     )

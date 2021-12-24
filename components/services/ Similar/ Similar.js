@@ -1,5 +1,5 @@
 import Img from "next/image";
-import img from "../../../Assets/similar/papers.svg"
+import { Button } from "../../button/button";
 
 const Similar = ({ data }) => {
 
@@ -15,9 +15,10 @@ const Similar = ({ data }) => {
                                 <p className="similar__description">
                                    {data.description}
                                 </p>
-                                <button className="similar__button">
+                                {/* <button className="similar__button">
                                     see more
-                                </button>
+                                </button> */}
+                                  <Button name="see more" />
                             </div>
                         </div>
                     );

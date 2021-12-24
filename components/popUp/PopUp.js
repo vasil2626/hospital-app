@@ -1,66 +1,96 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "../button/button"
-import { login } from "./authType"
+import { login, register } from "./authType"
 
-const PopUp = ({ close }) => {
+const PopUp = ({ close, rol }) => {
 
     const [registration, setRegistration] = useState(false)
+
 
     const closePopUp = () => {
         close()
     }
 
-    const handleRegistration = () => {
-        setRegistration(true)
+    const handelKyPress = (e) => {
+        if (e.keyCode === 27) {
+            closePopUp()
+        }
     }
 
+    useEffect(() => {
+        window.addEventListener("keydown", handelKyPress)
+        return () => {
+            window.removeEventListener("keydown", handelKyPress)
+        }
+    })
     return (
-        <div className="popup">
-            <div className="container">
-                <h2 className="popup__title">
-                    Login to your account
-                </h2>
-                <div className="popup__close-button" onClick={closePopUp}>
-                    <span className="popup__close-icon"></span>
-                    <span className="popup__close-icon"></span>
-                </div>
+        <section className="popup__section">
+            <div className="popup__background" onClick={() => close()} />
+            <div className="popup">
+                <div className="container">
+                    <div className="popup__content">
+                        {
+                            registration ?
+                                <h2 className="popup__title">
+                                    {register.title}
+                                </h2> :
+                                <h2 className="popup__title">
+                                    {login.title}
+                                </h2>
+                        }
 
-
-                <div className="popup__content">
-                    {/* {
-                        registration ?
-                            <>
-                                registration
-                            </> :
-                            <>
-                                <div className="registration__roll">
-                                    etdg
-                                </div>
+                        <div className="popup__close-button" onClick={closePopUp}>
+                            <span className="popup__close-icon"></span>
+                            <span className="popup__close-icon"></span>
+                        </div>
+                        <div className="popup__form">
+                            {
+                                registration ?
+                                    <>
+                                        <span className="popup__link-ref">go back to <span 
+                                        className="register__link" 
+                                        onClick={() => setRegistration(false)}>login</span>
+                                        </span>
+                                        {register.inputs.map((register) => {
+                                            return (
+                                                <form action="submit" className="register__form" key={register.id}>
+                                                    <input type={register.type} placeholder={register.placeHolder} className="form__inputs" />
+                                                    <span className="inputs__error">{register.error}</span>
+                                                </form>
+                                            );
+                                        })}
+                                    </> :
+                                    <>
+                                        <div className="login__title">
+                                            {rol}
+                                        </div>
+                                        {
+                                            login.inputs.map((login) => {
+                                                return (
+                                                    <form className="login__form" key={login.id} typeof="submit">
+                                                        <input type={login.type} placeholder={login.placeHolder} className="form__inputs" />
+                                                        <span className="inputs__error">{login.error}</span>
+                                                    </form>
+                                                );
+                                            })
+                                        }
+                                    </>
+                            }
+                            <div className="popup__bottom">
+                                <Button name={registration ? `${register.button}` : `${login.button}`} />
                                 {
-                                    login.inputs.map((login) => {
-                                        console.log(login);
-                                        return (
-                                            <form key={login.id} className="popup__form">
-                                                <input
-                                                    type={login.type}
-                                                    placeholder={login.placeHolder}
-                                                    className="popup__inputs"
-                                                    key={login.id} />
-                                                <span className="inputs__error">{login.error}</span>
-                                            </form>
-
-                                        );
-                                    })
+                                    !registration &&
+                                    <div className="popup__link-ref">
+                                        <span>if you don't not have an account</span>
+                                        <span className="register__link" onClick={() => setRegistration(true)}>register</span></div>
                                 }
-                            </>
-                    } */}
-                    <Button name="login" />
-                    <p className="popup__register-link">
-                        if you don't have an account, <span onClick={handleRegistration}>register</span>
-                    </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
     );
 }
 

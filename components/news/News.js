@@ -1,6 +1,7 @@
 import Img from "next/image";
 import Heading from "../Heading/Heading"
 import {data} from "./data"
+import { Button } from "../button/button";
 
 const News = () => {
 
@@ -18,9 +19,7 @@ const News = () => {
                             <p className="News__description">
                                {news.description}
                             </p>
-                            <button className="news__button">
-                                see more
-                            </button>
+                            <Button name="see more" />
                         </div>
                         );
                     })

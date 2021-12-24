@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../../Assets/navbar/logo.png";
 import Image from 'next/image'
-import { data } from "./data"
+import { data, auth } from "./data"
 import PopUp from "../popUp/PopUp";
 
 const Header = () => {
@@ -12,8 +12,9 @@ const Header = () => {
 
     const [openPopUp, setOpenPopUp] = useState(false)
 
+    const [rol, setRol] = useState("")
+
     const handleResize = (e) => {
-        console.log(e.srcElement.innerWidth);
         const { innerWidth } = e.srcElement
         if (innerWidth >= 826) {
             setMenuOpen(false)
@@ -31,17 +32,21 @@ const Header = () => {
         })
     }
 
-    const loginHandler = () => {
+    const loginHandler = (id) => {
         setOpenPopUp(true)
+        const rollFilter = auth.filter((rol) => rol.id === id)
+        rollFilter.map((item) => {
+            setRol(item.rol)
+        })
+
     }
 
-    const onClose = () =>{
+    const onClose = () => {
         setOpenPopUp(false)
     }
 
     useEffect(() => {
         window.addEventListener("resize", handleResize)
-
         return () => {
             window.removeEventListener("resize", handleResize)
         }
@@ -72,11 +77,17 @@ const Header = () => {
                         }
                     </ul>
                     <div className="nav__auth">
+
                         <ul className="nav__auth-list">
-                            <li className="nav__auth-items">login</li>
-                            <li className="nav__auth-items"></li>
-                            <li className="nav__auth-items" onClick={loginHandler}>clinics</li>
-                            <li className="nav__auth-items">requestor</li>
+                            <span className="nav__auth-items">login</span>
+                            <span className="nav__auth-items"></span>
+                            {
+                                auth.map((auth) => {
+                                    return (
+                                        <li className="nav__auth-items" onClick={() => loginHandler(auth.id)} key={auth.id}>{auth.rol}</li>
+                                    );
+                                })
+                            }
                         </ul>
                     </div>
                     <div className="nav__burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
@@ -91,12 +102,13 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-           
+
             </div>
             {
-                openPopUp && 
-                <PopUp 
-                close={onClose}
+                openPopUp &&
+                <PopUp
+                    close={onClose}
+                    rol={rol}
                 />
             }
         </nav>
