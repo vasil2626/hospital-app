@@ -28,7 +28,7 @@
     bottom: 0;
     transform: translate(-50%, -50%);
     width: 30em;
-    height: 430px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,10 +89,10 @@
     width: 100%;
 }
 
-.login__title{
+.rol__title{
     width: fit-content;
     padding: 3px 30px;
-    margin-top: 50px;
+    margin-top: 25px;
     border: 0.01px rgba(82, 78, 78, 0.342) solid;
     border-radius: 8px;
     color: #fff;
@@ -127,7 +127,7 @@
 .popup__bottom{
     display: flex;
     flex-direction: column;
-    margin: 10px 0 10px;
+    margin: 16px 0 25px;
     justify-content: center;
     align-items: center;
 }
@@ -145,3 +145,8 @@
     cursor: pointer;
 }
 
+@media screen and (max-width:740px) {
+    .popup__link-ref{
+        margin-right: 0;
+    }
+}

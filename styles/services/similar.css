@@ -22,7 +22,6 @@
 }
 .similar__description:nth-child(odd){
     width: 70%;
-
     margin-left: auto;
 }
 
@@ -43,4 +42,21 @@
 .similar__button:hover{
     width: 110px;
     font-size: 18px;
+}
+
+@media screen and (max-width: 730px) {
+    .similar__description{
+        width: 100%;
+    }
+    .similar__content{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .similar__content:nth-child(even){
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+       
+    }
 }

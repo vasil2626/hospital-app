@@ -12,12 +12,15 @@ const Header = () => {
 
     const [openPopUp, setOpenPopUp] = useState(false)
 
+    const [windowSize, setWindowSize] = useState()
+
     const [rol, setRol] = useState("")
 
     const handleResize = (e) => {
         const { innerWidth } = e.srcElement
         if (innerWidth >= 826) {
             setMenuOpen(false)
+            setWindowSize(innerWidth)
         }
     }
 
@@ -50,7 +53,7 @@ const Header = () => {
         return () => {
             window.removeEventListener("resize", handleResize)
         }
-    })
+    },[])
 
     return (
         <nav className="nav">
@@ -74,10 +77,10 @@ const Header = () => {
                                     <a href={routs.url} onClick={handleClick}>{routs.section}</a>
                                 </li>
                             })
+
                         }
                     </ul>
-                    <div className="nav__auth">
-
+                    <div className={!menuOpen || (windowSize <= 826 )? "nav__auth" : "nav__auth-mobile"}>
                         <ul className="nav__auth-list">
                             <span className="nav__auth-items">login</span>
                             <span className="nav__auth-items"></span>
