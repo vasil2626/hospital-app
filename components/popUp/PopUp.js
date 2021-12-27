@@ -4,8 +4,8 @@ import { login, register } from "./authType"
 
 const PopUp = ({ close, rol }) => {
 
-    const [registration, setRegistration] = useState(false)
 
+    const [registration, setRegistration] = useState(false)
 
     const closePopUp = () => {
         close()
@@ -38,7 +38,6 @@ const PopUp = ({ close, rol }) => {
                                     {login.title}
                                 </h2>
                         }
-
                         <div className="popup__close-button" onClick={closePopUp}>
                             <span className="popup__close-icon"></span>
                             <span className="popup__close-icon"></span>
@@ -47,10 +46,13 @@ const PopUp = ({ close, rol }) => {
                             {
                                 registration ?
                                     <>
-                                        <span className="popup__link-ref">go back to <span 
-                                        className="register__link" 
-                                        onClick={() => setRegistration(false)}>login</span>
+                                        <span className="popup__link-ref">go back to <span
+                                            className="register__link"
+                                            onClick={() => setRegistration(false)}>login</span>
                                         </span>
+                                        <div className="rol__title">
+                                            {rol}
+                                        </div>
                                         {register.inputs.map((register) => {
                                             return (
                                                 <form action="submit" className="register__form" key={register.id}>
@@ -61,7 +63,7 @@ const PopUp = ({ close, rol }) => {
                                         })}
                                     </> :
                                     <>
-                                        <div className="login__title">
+                                        <div className="rol__title">
                                             {rol}
                                         </div>
                                         {

@@ -14,7 +14,6 @@ const Heading = ({ head, right }) => {
 
     return (
         <div className={right?"section__headings": "section__heading-left"} >
-            
             <h1 className="heading__items-open" data-aos={right?"fade-left": "fade-right"}>
                 {head}
             </h1>

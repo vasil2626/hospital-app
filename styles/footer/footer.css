@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
 }
 
 .footer__links{
@@ -63,4 +64,16 @@
 .footer__info-description{
     color: #fff;
     line-height: 22px;
+}
+
+@media screen and (max-width: 793px) {
+    .footer__info{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .footer__content{
+        flex-direction: column-reverse;
+    }
 }
