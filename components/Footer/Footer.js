@@ -22,7 +22,7 @@ const Footer = () => {
                         <Link href={"/"} ><a className="link__items"> https://www.collinstionary.com/dictionary </a></Link>
                     </div>
                     <div className="footer__logo">
-                        <Img src={footerLogo} />
+                        <Img src={footerLogo} alt="img"/>
                         <span className="footer__copyright">copyright {date.getFullYear()} </span>
                         <ul className="footer__social-media">
                             <li className="social__media-items"><Img src={lin} height={20} width={20}/></li>

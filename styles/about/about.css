@@ -34,5 +34,13 @@
     .about__paragraph{
         background: none;
         width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    
+    .about{
+        margin-bottom: 100px;
     }
 }

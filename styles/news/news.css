@@ -43,3 +43,9 @@
     width: 110px;
     font-size: 18px;
 }
+@media screen and (max-width: 740px) {
+    
+    .news{
+        margin-bottom: 100px;
+    }
+}

@@ -9,7 +9,7 @@ const Similar = ({ data }) => {
                 data.map((data) => {
                     return (
                         <div className="similar__content" key={data.id}>
-                            <Img src={data.img} />
+                            <Img src={data.img} alt="img"/>
                             <div className="similar__text">
                                 <h1 className="similar__title">{data.title}</h1>
                                 <p className="similar__description">
