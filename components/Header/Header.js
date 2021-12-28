@@ -80,7 +80,7 @@ const Header = () => {
 
                         }
                     </ul>
-                    <div className={!menuOpen || (windowSize <= 826 )? "nav__auth" : "nav__auth-mobile"}>
+                    <div className="nav__auth" >
                         <ul className="nav__auth-list">
                             <span className="nav__auth-items">login</span>
                             <span className="nav__auth-items"></span>

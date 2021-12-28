@@ -20,7 +20,8 @@ const Main = () => {
           </div>
           <Image
             src={mainImage}
-            alt="img" className="main__img"
+            alt="img" 
+            className="main__img"
             height={500}
             width={600}
           />

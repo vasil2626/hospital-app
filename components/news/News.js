@@ -14,7 +14,7 @@ const News = () => {
                     data.map((news) =>{
                         return(
                             <div className="news__blocks" key={news.id}>
-                            <Img src={news.img} />
+                            <Img src={news.img} alt="img"/>
                             <h1 className="title">{news.title}</h1>
                             <p className="News__description">
                                {news.description}

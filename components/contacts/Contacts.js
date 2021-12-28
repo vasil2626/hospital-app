@@ -21,9 +21,9 @@ const Contacts = () => {
                     </div>
 
                     <ul className="contacts__info">
-                        <li className="info__items"> <Img src={tel} height={22} width={22}/> <span >+374 000 000</span> </li>
-                        <li className="info__items"><Img src={email} height={22} width={22}/> <span >m@gmail.com</span> </li>
-                        <li className="info__items"> <Img src={address} height={22} width={22}/> <span >address</span> </li>
+                        <li className="info__items"> <Img src={tel} height={22} width={22} alt="img"/> <span >+374 000 000</span> </li>
+                        <li className="info__items"><Img src={email} height={22} width={22} alt="img"/> <span >m@gmail.com</span> </li>
+                        <li className="info__items"> <Img src={address} height={22} width={22} alt="img"/> <span >address</span> </li>
                     </ul>
                     <div className="contacts__image"></div>
                 </div>

@@ -11,6 +11,7 @@ const About = () => {
                 <div className="about__content">
                     <Image 
                     src={aboutMainImg} 
+                    alt="img"
                     height={500}
                     width={600} />
                     <div className="about__paragraph">
