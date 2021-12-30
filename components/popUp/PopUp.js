@@ -1,11 +1,13 @@
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { Button } from "../button/button"
 import { login, register } from "./authType"
 
 const PopUp = ({ close, rol }) => {
 
-
     const [registration, setRegistration] = useState(false)
+
+    const rout = useRouter()
 
     const closePopUp = () => {
         close()
@@ -15,6 +17,11 @@ const PopUp = ({ close, rol }) => {
         if (e.keyCode === 27) {
             closePopUp()
         }
+    }
+
+    const buttonClick = () =>{
+        rout.push("/user/1")
+        close()
     }
 
     useEffect(() => {
@@ -79,7 +86,10 @@ const PopUp = ({ close, rol }) => {
                                     </>
                             }
                             <div className="popup__bottom">
-                                <Button name={registration ? `${register.button}` : `${login.button}`} />
+                                <Button 
+                                name={registration ? `${register.button}` : `${login.button}`} 
+                                onClick={buttonClick}
+                                />
                                 {
                                     !registration &&
                                     <div className="popup__link-ref">

@@ -1,0 +1,13 @@
+.admin__layout{
+    background-color: #D4D9DA;
+    height: 100vh;
+}
+
+.profile__content{
+    width: 80%;
+    background-color: aliceblue;
+    position: relative;
+    right: 0;
+    left: 19%;
+    margin-top: 16px;
+}

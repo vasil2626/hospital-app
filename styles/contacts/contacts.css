@@ -43,13 +43,29 @@
 .form__submit{
     height: 40px;
     padding: 15px;
-    background-color: #5C5A75;
-    color: #B6ADB0;
+    background-color: #FFFFFF;
+    color: #B1B4B9;
     border-radius: 8px;
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
+.form__submit:hover{
+    background-color: #C8C3C3;
+    color: #FFFFFF;
+}
+
+.form__submit-clicked{
+    height: 40px;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #5C5A75;
+    color: #ADA5AB;
+}
 
 .contacts__info{
     margin-right: 60px;

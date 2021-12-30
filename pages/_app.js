@@ -11,16 +11,28 @@ import "../styles/news/news.css"
 import "../styles/contacts/contacts.css"
 import "../styles/popUp/popUp.css"
 import "../styles/button/button.css"
+import "../styles/layouts/homeLayout/homeLayout.css"
+import "../styles/layouts/profileLayout/profileLayout.css"
+import "../styles/profile/profileHead/profileHead.css"
+import "../styles/profile/profileSide/profileSide.css"
 
 import Layout from '../components/Layout'
+import ProfileLayout from "../components/ProfileLayout"
 
-function MyApp({ Component, pageProps  }) {
+function MyApp({ Component, pageProps }) {
+
+  if (Component.getLayout) {
+    return Component.getLayout(<ProfileLayout>
+      <Component {...pageProps} />
+    </ProfileLayout>)
+  }
+
   return (
     <>
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-      </>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 
 }
