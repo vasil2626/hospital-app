@@ -3,6 +3,7 @@ import logo from "../../Assets/navbar/logo.png";
 import Image from 'next/image'
 import { data, auth } from "./data"
 import PopUp from "../popUp/PopUp";
+import Link from "next/link";
 
 const Header = () => {
 
@@ -12,7 +13,6 @@ const Header = () => {
 
     const [openPopUp, setOpenPopUp] = useState(false)
 
-    const [windowSize, setWindowSize] = useState()
 
     const [rol, setRol] = useState("")
 
@@ -20,7 +20,6 @@ const Header = () => {
         const { innerWidth } = e.srcElement
         if (innerWidth >= 826) {
             setMenuOpen(false)
-            setWindowSize(innerWidth)
         }
     }
 
@@ -53,19 +52,23 @@ const Header = () => {
         return () => {
             window.removeEventListener("resize", handleResize)
         }
-    },[])
+    }, [])
 
     return (
         <nav className="nav">
             <div className="container">
                 <div className="nav__content">
                     <div className="nav-logo">
-                        <Image
-                            src={logo}
-                            alt="logo"
-                            width={94}
-                            height={42}
-                        />
+                        <Link href='/'>
+                            <a>
+                                <Image
+                                    src={logo}
+                                    alt="logo"
+                                    width={94}
+                                    height={42}
+                                />
+                            </a>
+                        </Link>
                     </div>
                     <ul className={!menuOpen ? "nav__content-list" : "nav__content-side"} >
                         {

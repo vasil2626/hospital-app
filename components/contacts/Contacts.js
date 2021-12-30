@@ -3,9 +3,24 @@ import Heading from "../Heading/Heading"
 import tel from "../../Assets/contacts/contacts-icon/tell.png"
 import email from "../../Assets/contacts/contacts-icon/email.png"
 import address from "../../Assets/contacts/contacts-icon/adress.png"
+import { useState } from "react";
 
 
 const Contacts = () => {
+
+    const [buttonClick, setButtonClick] = useState({
+        name: "send",
+        clicked: false
+    })
+
+    const handleSubmit = () =>{
+        setButtonClick({
+            ...buttonClick,
+            name: "thank you",
+            clicked: true
+        })
+    }
+
     return (
         <section className="contacts" id="contacts">
             <div className="container">
@@ -15,8 +30,11 @@ const Contacts = () => {
                         <input type="email" name="email" placeholder="email" className="contacts__input" />
                         <input type="text" name="subject" placeholder="subject" className="contacts__input" />
                         <textarea name="message" placeholder="message" className="contacts__message-area" />
-                        <button className="form__submit">
-                            send
+                        <button 
+                        className={!buttonClick.clicked?"form__submit": "form__submit-clicked"} 
+                        onClick={handleSubmit}
+                        >
+                            {buttonClick.name}
                         </button>
                     </div>
 

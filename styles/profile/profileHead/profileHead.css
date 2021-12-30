@@ -1,0 +1,9 @@
+.profile__head{
+    position: sticky;
+    top: 0;
+    left: 19%;
+    width: 80%;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 5px;
+}
