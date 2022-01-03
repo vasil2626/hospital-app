@@ -15,16 +15,25 @@ import "../styles/layouts/homeLayout/homeLayout.css"
 import "../styles/layouts/profileLayout/profileLayout.css"
 import "../styles/profile/profileHead/profileHead.css"
 import "../styles/profile/profileSide/profileSide.css"
+import "../styles/profile/sideTabs/sideTabs.css"
 
-import Layout from '../components/Layout'
+import { useStore } from '../redux/store'
+import Layout from "../components/Layout"
 import ProfileLayout from "../components/ProfileLayout"
+import { Provider } from "react-redux";
 
 function MyApp({ Component, pageProps }) {
 
+
+  const store = useStore(pageProps.initialReduxState)
+
   if (Component.getLayout) {
-    return Component.getLayout(<ProfileLayout>
-      <Component {...pageProps} />
-    </ProfileLayout>)
+    return Component.getLayout(
+      <Provider store={store}>
+        <ProfileLayout>
+          <Component {...pageProps} />
+        </ProfileLayout>
+      </Provider>)
   }
 
   return (
