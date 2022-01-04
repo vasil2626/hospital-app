@@ -16,6 +16,8 @@ import "../styles/layouts/profileLayout/profileLayout.css"
 import "../styles/profile/profileHead/profileHead.css"
 import "../styles/profile/profileSide/profileSide.css"
 import "../styles/profile/sideTabs/sideTabs.css"
+import "../styles/profile/userInfo/userInfo.css"
+import "react-datepicker/dist/react-datepicker.css";
 
 import { useStore } from '../redux/store'
 import Layout from "../components/Layout"

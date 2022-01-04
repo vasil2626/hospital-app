@@ -1,7 +1,7 @@
 .profile__head{
     display: flex;
     align-items: center;
-    position: sticky;
+    position: relative;
     top: 0;
     left: 19%;
     width: 80%;
@@ -32,6 +32,6 @@
 }
 
 .log-out__text{
-    margin-left: 5px;
+    margin: 0 10px 0 0;
     cursor: pointer;
 }

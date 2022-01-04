@@ -18,8 +18,8 @@ const ProfileHead = () => {
                 </span>
             </div>
             <div className="profile__head-logout">
-                <Img src={logOut} alt ="log-out" height={25} width={25} />
                 <span className="log-out__text" onClick={handleLogOut}>Log out</span>
+                <Img src={logOut} alt ="log-out" height={25} width={25} />
             </div>
         </div>
     );

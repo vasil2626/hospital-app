@@ -1,7 +1,9 @@
+import UserInfo from "../userInfo/UserInfo";
+
 const ProfileContent = () =>{
     return(
         <>
-        content sdf
+        <UserInfo/>
         </>
     );
 }
