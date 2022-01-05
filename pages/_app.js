@@ -18,6 +18,8 @@ import "../styles/profile/profileSide/profileSide.css"
 import "../styles/profile/sideTabs/sideTabs.css"
 import "../styles/profile/userInfo/userInfo.css"
 import "react-datepicker/dist/react-datepicker.css";
+import "../styles/profile/pagination/pagination.css"
+import "../styles/profile/profileOrder/profileOrder.css"
 
 import { useStore } from '../redux/store'
 import Layout from "../components/Layout"

@@ -1,27 +1,27 @@
-import { useState } from "react";
 
-const Pagination = ({currentPage, posts, pagination}) =>{
+const Pagination = ({ perPage, totalPage, pagination }) => {
+
 
     const pageNumber = []
 
-    for(let i = 1; i <= Math.ceil(posts - i); i++){
-        console.log(i);
+    for (let i = 1; i <= Math.ceil(totalPage / perPage); i++) {
         pageNumber.push(i)
     }
 
-    return(
+
+    return (
         <div className="pagination">
-            
             {
-                pageNumber.map((page, i) =>{
-                    return(
-                        <button 
-                        key={i}
-                        className="pagination__button"
-                        onClick={() => pagination(page)}
+                pageNumber.map((page, i) => {
+                    return (
+                        <button
+                            key={i}
+                            className="pagination__button"
+                            onClick={() => pagination(page)}
+                            disabled={totalPage <= pageNumber.length}
                         >
                             {page}
-                            </button>
+                        </button>
                     );
                 })
             }
