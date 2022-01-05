@@ -1,7 +1,11 @@
+import ProfileContent from "../../components/profile/profileContent/ProfileContent";
+
 const User = () => {
+
+
     return (
         <div className="profile__content">
-            sdgssdfs
+            <ProfileContent/>
         </div>
     );
 }

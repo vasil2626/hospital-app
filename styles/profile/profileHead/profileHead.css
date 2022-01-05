@@ -1,9 +1,37 @@
 .profile__head{
-    position: sticky;
+    display: flex;
+    align-items: center;
+    position: relative;
     top: 0;
     left: 19%;
     width: 80%;
     height: 80px;
     background-color: #fff;
     border-radius: 5px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profile__user{
+    margin-left: 20px;
+    box-sizing: content-box;
+}
+
+.profile__user-email{
+    border-left: 1px solid #000;
+}
+
+.--email{
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.profile__head-logout{
+    display: flex;
+    align-items: center;
+}
+
+.log-out__text{
+    margin: 0 10px 0 0;
+    cursor: pointer;
 }

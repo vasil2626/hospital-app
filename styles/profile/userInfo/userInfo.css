@@ -1,0 +1,174 @@
+.user__info{
+     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.user__info-section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.user__section-head{
+    display: none;
+}
+
+.user__info-content{
+    background-color: #fff;
+    width: 49%;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.user__info-user{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user__state{
+    margin-left: 15px;
+}
+
+.user__items{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.--item__key{
+    font-size: 14px;
+}
+
+.--item__value{
+    display: block;
+    padding: 5px;
+    background-color: #FE6B6C;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 45px;
+    text-align: center;
+}
+
+.user__items:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.user__button-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 25px;
+    gap: 17px;
+}
+
+.user__info-button{
+    width: 70%;
+    background-color: #737374;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 9px;
+    box-sizing: content-box;
+}
+
+.user__info-button:hover{
+    background-color: #FE6B6C;
+}
+
+.user__info-due-date{
+    width: 49%;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 25px;
+}
+.--due__date-content{
+    position: absolute;
+    margin: 0 auto;
+
+}
+
+.date__content-label{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.--date__content-chart{
+    position: relative;
+    width: 90%;
+    margin-top: 40px;
+}
+
+.user__info-marks{
+    margin-top: 20px;
+}
+
+.marks__list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 25px 25px 12px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.marks__list-items{
+     display: flex;
+     align-items: center;
+    border-bottom: 1px solid #737374;
+
+}
+
+.marks__list-items:not(:last-child){
+    margin-bottom: 15px;
+
+}
+.marks__label{
+    /* font-size: 12px; */
+    color: #000;
+}
+
+.marks__description{
+    color: #737374;
+    width: 60%;
+    margin-bottom: 15px;
+}
+
+.marks__status{
+    margin-right: 73px;
+    font-size: 10px;
+    background-color: #FE6B6C;
+    color: #fff;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.marks__lists-status{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #FE6B6C;
+    margin-right: 25px;
+    font-size: 12px;
+}
+
+.status__light{
+    height: 12px;
+    width: 12px;
+    background-color: #FE6B6C;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.pagination{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
