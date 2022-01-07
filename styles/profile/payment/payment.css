@@ -1,0 +1,26 @@
+.payment{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.payment__content{
+    width: 100%;
+    padding: 0 25px ;
+}
+
+.payment__head{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.payment__search{
+    margin-top: 35px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.payment__search-form{
+    display: flex;
+}

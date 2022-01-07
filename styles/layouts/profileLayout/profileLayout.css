@@ -1,10 +1,11 @@
 .admin__layout{
     background-color: #D4D9DA;
-    /* height: 100vh; */
+    /* height: 118vh; */
 }
 
 .profile__content{
     width: 80%;
+    height: 99vh;
     position: relative;
     right: 0;
     left: 19%;

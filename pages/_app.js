@@ -20,6 +20,9 @@ import "../styles/profile/userInfo/userInfo.css"
 import "react-datepicker/dist/react-datepicker.css";
 import "../styles/profile/pagination/pagination.css"
 import "../styles/profile/profileOrder/profileOrder.css"
+import "../styles/profile/table/table.css"
+import "../styles/profile/table/tableAction.css"
+import "../styles/profile/payment/payment.css"
 
 import { useStore } from '../redux/store'
 import Layout from "../components/Layout"

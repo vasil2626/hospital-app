@@ -92,7 +92,7 @@ const UserInfo = () => {
                     <div className="marks__lists-status"><span className="status__light" /> Marks all as ready </div>
                 </ul>
             </section>
-            <section className="pagination">
+            <section className="marks__pagination">
                 <Pagination
                     perPage={perPage}
                     totalPage={pages.length}
