@@ -1,0 +1,40 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #A0A1A1;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #737374;
+    color: #fff;
+  }
+  
+  td {
+    background-color: #D4D9DA;
+    color: #000;
+  }
+.table__pagination{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.action__icon{
+  text-align: end;
+  padding: 0 16px;
+  position: relative;
+  cursor: pointer;
+
+}

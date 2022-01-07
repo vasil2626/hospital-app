@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import ProfileOrder from "../profileOrder/ProfileOrder";
+import ProfilePayment from "../profilePayment/ProfilePayment";
 import UserInfo from "../userInfo/UserInfo";
 
 const ProfileContent = () => {
-
-
 
     const state = useSelector(state => state.toggleReducer.toggle)
 
@@ -17,7 +15,7 @@ const ProfileContent = () => {
                     state === 'orders' ?
                         <ProfileOrder/>:
                         state === 'payment' &&
-                        <h1>payment</h1>
+                        <ProfilePayment/>
             }
         </>
     );

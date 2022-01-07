@@ -1,7 +1,7 @@
 .user__info{
      width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -167,7 +167,7 @@
     margin: 0 5px;
 }
 
-.pagination{
+.marks__pagination{
     width: 100%;
     display:flex;
     justify-content: center;
