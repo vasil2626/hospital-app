@@ -1,1 +1,20 @@
 export const TOGGLE = "TOGGLE"
+
+export const OPEN__SIDE__BAR = "OPEN__SIDE__BAR"
+
+
+export const GET__DATA = "GET__DATA"
+
+export const GET__SERVICES__SUCCESS = "GET__SERVICES__SUCCESS"
+
+export const GET__SERVICES__FAILURE = "GET__SERVICES__FAILURE"
+
+export const GET__NEWS__SUCCESS = "GET__NEWS__SUCCESS"
+
+export const GET__NEWS__FAILURE = "GET__NEWS__FAILURE"
+
+export const SEND__MESSAGE__SUCCESS = "SEND__MESSAGE__SUCCESS"
+
+export const SEND__MESSAGE__FAILURE = "SEND__MESSAGE__FAILURE"
+
+export const GET__GLOBALS__SUCCESS = "GET__GLOBALS__SUCCESS"

@@ -1,8 +1,8 @@
 .user__info{
-     width: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .user__info-section{
@@ -88,9 +88,9 @@
     padding: 25px;
 }
 .--due__date-content{
-    position: absolute;
-    margin: 0 auto;
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .date__content-label{
@@ -99,10 +99,22 @@
     font-size: 14px;
 }
 
+.due__date-date{
+    height: 28px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-image: url("../.././../Assets/../Assets/profile/user/Icon\ metro-profile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 22px;
+    background-position-x: 130px;
+    background-position-y: center;
+    padding: 0 7px;
+}
+
 .--date__content-chart{
-    position: relative;
-    width: 90%;
-    margin-top: 40px;
+    width: 65%;
+    margin: 5px auto;
 }
 
 .user__info-marks{
@@ -171,4 +183,22 @@
     width: 100%;
     display:flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 1059px){
+    .user__info-section{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .user__info-content{
+        width: 100%;
+    }
+    .user__info-due-date{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    /* .marks__status{
+        margin: 0 auto; 
+    } */
 }

@@ -1,6 +1,6 @@
 import userImage from "../../../Assets/user-info/user-info.png"
 
-export const data = [
+export const datas = [
     {
         id: 1,
         img: userImage,

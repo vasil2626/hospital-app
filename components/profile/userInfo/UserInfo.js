@@ -1,11 +1,16 @@
-import Img from "next/image";
-import { data, marks } from "./data"
-import ReactDatePicker from "react-datepicker";
 import { useEffect, useState } from "react";
-import chart from "../../../Assets/user-info/chart.png"
+import { useSelector, useDispatch } from "react-redux";
+import Img from "next/image";
+import { datas, marks } from "./data"
+import ReactDatePicker from "react-datepicker";
+import Chart from "../chart/Chart";
 import Pagination from "../pagination/Pagination";
+// import { getData } from "../../../redux/actions/getData/getDataAction";
+
 
 const UserInfo = () => {
+
+
 
     const [startDate, setStartDate] = useState(new Date())
 
@@ -15,10 +20,14 @@ const UserInfo = () => {
 
     const [perPage] = useState(3)
 
+    // const {data} = useSelector(state => state.getDataReducer)
+
+
+
     useEffect(() => {
         setPages(marks)
-    
-    },[currentPage, perPage])
+
+    }, [currentPage, perPage])
 
     const lastIndex = currentPage * perPage
     const firstIndex = lastIndex - perPage
@@ -28,12 +37,14 @@ const UserInfo = () => {
         setCurrentPage(pageNumber)
     }
 
+
+
     return (
         <div className="user__info">
-            <div className= "user__info-section" >
+            <div className="user__info-section" >
                 <div className="user__info-content">
                     {
-                        data.map((user) => {
+                        datas.map((user) => {
                             return (
                                 <div className="user__info-user" key={user.id}>
                                     <Img src={user.img} alt="user" />
@@ -67,9 +78,10 @@ const UserInfo = () => {
                             selected={startDate}
                             startDate={startDate}
                             onChange={(date) => setStartDate(date)}
+                            className="due__date-date"
                         />
                         <div className="--date__content-chart">
-                            <Img src={chart} />
+                            <Chart />
                         </div>
                     </div>
                 </div>
@@ -99,9 +111,12 @@ const UserInfo = () => {
                     pagination={paginate}
                 />
             </section>
+     
         </div>
     );
 }
+
+
 
 
 export default UserInfo

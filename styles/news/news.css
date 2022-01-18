@@ -14,7 +14,7 @@
 }
 
 .news__blocks{
-    /* width: 100%; */
+    width: 478px;
     text-align: center;
     display: flex;
     flex-direction: column;

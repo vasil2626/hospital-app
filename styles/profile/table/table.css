@@ -25,6 +25,8 @@
     background-color: #D4D9DA;
     color: #000;
   }
+
+
 .table__pagination{
     display: flex;
     justify-content: flex-end;

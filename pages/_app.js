@@ -24,10 +24,13 @@ import "../styles/profile/table/table.css"
 import "../styles/profile/table/tableAction.css"
 import "../styles/profile/payment/payment.css"
 
-import { useStore } from '../redux/store'
 import Layout from "../components/Layout"
 import ProfileLayout from "../components/ProfileLayout"
 import { Provider } from "react-redux";
+import { wrapper } from "../redux/store"
+import { useStore } from 'react-redux'
+
+
 
 function MyApp({ Component, pageProps }) {
 
@@ -40,7 +43,8 @@ function MyApp({ Component, pageProps }) {
         <ProfileLayout>
           <Component {...pageProps} />
         </ProfileLayout>
-      </Provider>)
+      </Provider>
+    )
   }
 
   return (
@@ -50,7 +54,6 @@ function MyApp({ Component, pageProps }) {
       </Layout>
     </>
   )
-
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp) 

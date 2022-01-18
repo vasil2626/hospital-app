@@ -1,37 +1,36 @@
-import { useMemo } from 'react'
 import { createStore, applyMiddleware } from 'redux'
+import { HYDRATE ,createWrapper } from 'next-redux-wrapper'
 import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
 import reducers from './combineReducer'
 
-let store
 
-function initStore(initialState) {
-  return createStore(
-    reducers,
-    initialState,
-    applyMiddleware(thunkMiddleware, logger)
-  )
-}
 
-export const initializeStore = (preloadedState) => {
-  let _store = store ?? initStore(preloadedState)
+const  middleware = [thunkMiddleware]
 
-  if (preloadedState && store) {
-    _store = initStore({
-      ...store.getState(),
-      ...preloadedState,
-    })
-    store = undefined
+const bindMiddleware = () => {
+  if (process.env.NODE_ENV !== "production") {
+    middleware.push(logger)
   }
+  return applyMiddleware(...middleware);
+};
 
-  if (typeof window === 'undefined') return _store
-  if (!store) store = _store
 
-  return _store
-}
+const rootReducer = (state, action) => {
+  if (action.type === HYDRATE) {
+     const nextState = {
+      ...state, 
+      ...action.payload, 
+    };
+    return nextState;
+  } else {
+    return reducers(state, action);
 
-export function useStore(initialState) {
-  const store = useMemo(() => initializeStore(initialState), [initialState])
-  return store
-}
+  }
+};
+
+
+const initStore = () => {
+  return createStore(rootReducer, bindMiddleware(...middleware));
+};
+export const wrapper = createWrapper(initStore, {debug: true});
