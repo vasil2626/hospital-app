@@ -21,6 +21,19 @@
     padding: 10px;
 }
 
+.tabs__items-active{
+    width: 100%;
+    display: flex;
+    background-color: #737374;
+    height: 40px;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+}
+
 .tabs__items:not(:last-child){
     margin-bottom: 1px ;
 }

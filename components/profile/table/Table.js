@@ -39,7 +39,7 @@ const Table = () => {
         <div className="table-container">
             <table className="table">
                 <thead>
-                    <tr >
+                    <tr className="tr1">
                         {
                             data.map((head, i) => {
                                 return (
@@ -56,8 +56,8 @@ const Table = () => {
                     {
                         current.map((body, i) => {
                             return (
-                                <tr key={i}>
-                                    <td>{body.id}</td>
+                                <tr key={i} className="tr">
+                                    <td className="td">{body.id}</td>
                                     <td >{body.name}</td>
                                     <td >{body.status}</td>
                                     <td >{body.clinic}</td>

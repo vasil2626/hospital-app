@@ -10,13 +10,17 @@
     
 }
 
-.about__paragraph{
-    width: 38%;
-    background-image: url("../../Assets/about/about-bg.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-top: 100px;
+.about__content-image-container{
+    min-width: 60%;
 }
+
+.about__content-image{
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+
 
 .about__text{
     color: #737374;
@@ -25,17 +29,12 @@
     line-height: 1.5;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 1200px) {
     .about__content{
-        /* width: 50%; */
         justify-content: center;
 
     }
-    .about__paragraph{
-        background: none;
-        width: 100%;
-        margin-top: 0;
-    }
+
 }
 
 @media screen and (max-width: 740px) {
@@ -43,4 +42,5 @@
     .about{
         margin-bottom: 100px;
     }
+ 
 }

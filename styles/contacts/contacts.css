@@ -22,22 +22,16 @@
     border-radius: 8px;
     height: 40px;
     border: none;
-}
-
-.contacts__input::placeholder{
-   padding-left: 10px;
-}
-
-
-.contacts__message-area::placeholder{
-    padding: 10px 10px;
-
+    padding-left: 10px;
+    text-transform: capitalize;
 }
 
 .contacts__message-area{
     border-radius: 8px;
     height: 100px;
     border: none;
+    padding: 10px 10px;;
+    text-transform: capitalize;
 }
 
 .form__submit{
@@ -92,6 +86,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: right;
+}
+
+@media screen and (max-width: 1660px){
+    .contacts__image{
+        background-position-y:center
+    }
 }
 
 @media screen and (max-width: 1400px) {

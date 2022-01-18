@@ -5,16 +5,17 @@ import UserInfo from "../userInfo/UserInfo";
 
 const ProfileContent = () => {
 
-    const state = useSelector(state => state.toggleReducer.toggle)
+    const {toggle} = useSelector(state => state.toggleReducer)
+
 
     return (
         <>
             {
-                state === "profile" ?
+                toggle === "profile" ?
                     <UserInfo /> :
-                    state === 'orders' ?
+                    toggle === 'orders' ?
                         <ProfileOrder/>:
-                        state === 'payment' &&
+                        toggle === 'payment' &&
                         <ProfilePayment/>
             }
         </>

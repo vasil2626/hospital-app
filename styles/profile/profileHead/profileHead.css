@@ -11,6 +11,10 @@
     justify-content: space-between;
     padding: 20px;
 }
+.open__side-bar{
+    display: none;
+
+}
 
 .profile__user{
     margin-left: 20px;
@@ -34,4 +38,14 @@
 .log-out__text{
     margin: 0 10px 0 0;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1059px){
+    .open__side-bar{
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-color: #000;
+        cursor: pointer;
+    }
 }
