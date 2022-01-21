@@ -1,7 +1,7 @@
 import * as types from "../../actionTypes"
 
 const initialState = {
-    isOpen: null
+    isOpen: false
 }
 
 export const openBarReducer = (state = initialState, {type, payload}) =>{

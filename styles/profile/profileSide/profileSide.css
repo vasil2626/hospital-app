@@ -9,14 +9,16 @@
 }
 
 .profile__side-head{
-    display: none;
+    left: -198px;
 }
 
 .profile__side-content{
     text-align: center;
     margin: 150px 0;
 }
-
+.profile__side-content-head{
+    display: none;
+}
 .company__name{
     width:50%;
     margin: 20px auto;
@@ -41,8 +43,12 @@
     font-size: 12px;
 }
 
-/* @media screen and (max-width: 1059px){
+@media screen and (max-width: 1059px){
     .profile__side{
-        left: -198px;
+        width: 300px;
+        margin-top: 96px;
     }
-} */
+    /* .profile__side-content{
+        display: none;
+    } */
+}

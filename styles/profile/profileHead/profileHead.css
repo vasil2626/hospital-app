@@ -41,6 +41,11 @@
 }
 
 @media screen and (max-width: 1059px){
+    .profile__head{
+        left: 1%;
+        width: 98%;
+        overflow: hidden;
+    }
     .open__side-bar{
         display: block;
         width: 25px;

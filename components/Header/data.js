@@ -30,10 +30,10 @@ export const auth = [
   
     {
         id:6,
-        rol: "clinic"
+        rol: "clinics"
     },
     {
         id:7,
-        rol: "requestor"
+        rol: "requestors"
     }
 ]
