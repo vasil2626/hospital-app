@@ -1,10 +1,10 @@
 import Img from "next/image";
 import Link from "next/link";
 import footerLogo from "../../Assets/navbar/logo.png"
-import lin from "../../Assets/socialmedia/linkedin.png"
-import fb from "../../Assets/socialmedia/facebook.png"
-import ig from "../../Assets/socialmedia/instagram.png"
-import vk from "../../Assets/socialmedia/vkontakte.png"
+import lin from "../../Assets/socialmedia/linkedin.svg"
+import fb from "../../Assets/socialmedia/facebook.svg"
+import ig from "../../Assets/socialmedia/instagram.svg"
+import vk from "../../Assets/socialmedia/vkontakte.svg"
 
 
  

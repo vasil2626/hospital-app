@@ -10,3 +10,10 @@
     left: 19%;
     margin-top: 16px;
 }
+
+@media screen and (max-width: 1059px){
+    .profile__content{
+        width: 98%;
+        left: 1%;
+    }
+}

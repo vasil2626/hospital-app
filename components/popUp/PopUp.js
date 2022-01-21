@@ -1,11 +1,25 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 import { Button } from "../button/button"
 import { login, register } from "./authType"
+import { registerAction } from "../../redux/actions/registerAction/registerAction"
+import { useSelector } from "react-redux"
+
 
 const PopUp = ({ close, rol }) => {
 
     const [registration, setRegistration] = useState(false)
+
+    const [registerRol, setRegisterRol] = useState()
+
+    const [inputValues, setInputValues] = useState({})
+
+    const { error, success, popUpData } = useSelector(state => state.registerReducer)
+    console.log("🚀 ~ file: PopUp.js ~ line 19 ~ PopUp ~ popUpData", popUpData)
+
+
+    const dispatch = useDispatch()
 
     const rout = useRouter()
 
@@ -19,10 +33,32 @@ const PopUp = ({ close, rol }) => {
         }
     }
 
-    const buttonClick = () =>{
-        rout.push("/user/1")
-        close()
+    const buttonClick = () => {
+        // rout.push("/user/1")
+        // close()
+
+        dispatch(registerAction(rol, inputValues))
+
+        if (!success){
+            registerRol.error = error
+        }
     }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setInputValues({
+            ...inputValues,
+            [name]: value
+        })
+    }
+
+    useEffect(() => {
+        if (rol === "clinics") {
+            dispatch(registerAction(register.inputsClinic))
+        } else if (rol === "requestors") {
+            dispatch(registerAction(register.inputsRequestor))
+        }
+    },[popUpData])
 
     useEffect(() => {
         window.addEventListener("keydown", handelKyPress)
@@ -30,6 +66,8 @@ const PopUp = ({ close, rol }) => {
             window.removeEventListener("keydown", handelKyPress)
         }
     })
+
+
     return (
         <section className="popup__section">
             <div className="popup__background" onClick={() => close()} />
@@ -60,11 +98,12 @@ const PopUp = ({ close, rol }) => {
                                         <div className="rol__title">
                                             {rol}
                                         </div>
-                                        {register.inputs.map((register) => {
+                                        {popUpData?.map((register) => {
                                             return (
-                                                <form action="submit" className="register__form" key={register.id}>
-                                                    <input type={register.type} placeholder={register.placeHolder} className="form__inputs" />
+                                                <form className="register__form" key={register.id} onChange={handleChange}>
+                                                    <input type={register.type} placeholder={register.placeHolder} className="form__inputs" name={register.name} required />
                                                     <span className="inputs__error">{register.error}</span>
+
                                                 </form>
                                             );
                                         })}
@@ -86,9 +125,9 @@ const PopUp = ({ close, rol }) => {
                                     </>
                             }
                             <div className="popup__bottom">
-                                <Button 
-                                name={registration ? `${register.button}` : `${login.button}`} 
-                                onClick={buttonClick}
+                                <Button
+                                    name={registration ? `${register.button}` : `${login.button}`}
+                                    onClick={buttonClick}
                                 />
                                 {
                                     !registration &&
